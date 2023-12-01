@@ -1,0 +1,36 @@
+@import '@/styles/variables.sass'
+
+.whom
+  position: relative
+  z-index: 100
+  padding-bottom: 150px
+  background-color: #ffffff
+
+.title
+  position: sticky
+  left: 0
+  top: 0
+  max-width: 1024px
+  padding-top: 15vh
+  padding-bottom: 60vh
+  padding-left: $paddingContainer
+  padding-right: $paddingContainer
+  font-family: "SanFrancisco"
+  font-weight: 500
+  background-color: #ffffff
+
+.cardList
+  // display: flex
+  // flex-wrap: wrap
+  // gap: 70px
+
+@media (max-width: 1024px)
+
+  .whom
+    padding-bottom: 60px
+
+  .title
+    padding-bottom: 40vh
+
+  .cardList
+    gap: 40px

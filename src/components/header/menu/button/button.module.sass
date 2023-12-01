@@ -1,0 +1,29 @@
+@import '@/styles/variables.sass'
+
+.button
+  display: none
+
+@media (max-width: 1024px)
+
+  .button
+    position: fixed
+    top: 23px
+    display: inline-block
+    right: $paddingContainer
+    z-index: 350
+    mix-blend-mode: difference
+    color: #fff
+    font-size: 19px
+    font-family: "SanFrancisco"
+    font-weight: 300
+    overflow: hidden
+    background-color: rgb(255,255,255, 0)
+
+  .menu, .close
+    display: block
+    transition: transform .45s cubic-bezier(0.38, 0.005, 0.215, 1)
+
+  .menu
+    position: absolute
+    top: 0
+    right: 0

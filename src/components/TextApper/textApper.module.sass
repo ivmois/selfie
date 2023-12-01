@@ -1,0 +1,71 @@
+.section
+  padding: 100px 0
+  background-color: #000000
+
+.content
+  display: flex
+  flex-wrap: wrap
+  gap: 100px
+  margin-bottom: 50px
+
+.title
+  margin-bottom: 100px
+  color: #ffffff
+
+.services
+  flex: 1 1 47%
+  max-width: 800px
+
+.list
+  margin-bottom: 50px
+  &__item
+    display: flex
+    align-items: center
+    min-height: 65px
+    border-bottom: 1px solid #ffffff
+    font-size: 25px
+    color: #ffffff
+
+.price
+  display: block
+  padding: 5px 0
+  font-size: 40px
+  color: #ffffff
+  &_sale
+    font-size: 20px
+
+.info
+  flex: 1 1 46%
+  text-transform: uppercase
+  font-size: 30px
+  font-family: "SanFrancisco"
+  font-weight: 300
+  color: #ffffff
+
+@media (max-width: 1024px)
+
+  .section
+    padding: 50px 0
+
+  .title
+    margin-bottom: 35px
+
+  .content
+    flex-direction: column
+    gap: 50px
+    margin-bottom: 50px
+
+  .list
+    margin-bottom: 20px
+    &__item
+      min-height: 55px
+      font-size: 16px
+      color: #ffffff
+
+  .price
+    font-size: 25px
+    &_sale
+      font-size: 16px
+
+  .info
+    font-size: 12px

@@ -1,0 +1,33 @@
+.lines
+  display: flex
+  color: #ffffff
+  font-size: 140px
+  white-space: nowrap
+  overflow: hidden
+  &__item
+    padding-left: .8vw
+    -webkit-animation: railLocation 35s linear infinite
+    animation: railLocation 35s linear infinite
+    will-change: animation
+    &_color
+      color: #FF4C00
+
+@keyframes railLocation
+
+  0%
+    transform: translate3d(0, 0, 0)
+
+  100%
+    transform: translate3d(-100%, 0, 0)
+
+@media (max-width: 1024px)
+
+  .lines
+    font-family: sans-serif
+    font-size: 50px
+    &__item
+      padding-left: 2vw
+      -webkit-animation: railLocation 40s linear infinite
+      animation: railLocation 40s linear infinite
+      &_color
+        color: #FF4C00

@@ -1,0 +1,55 @@
+@import '@/styles/variables.sass'
+
+.nav
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 300
+  padding: 20px $paddingContainer
+  visibility: visible
+  transition: transform .45s cubic-bezier(0.38, 0.005, 0.215, 1), visibility 0.45s ease
+  mix-blend-mode: difference
+
+.list
+  display: flex
+  justify-content: center
+  align-items: center
+
+.listItem:not(:last-child)
+  margin-right: 20px
+
+.link
+  color: #fff
+  font-size: 20px
+  text-transform: uppercase
+  font-family: "SanFrancisco"
+  font-weight: 300
+
+  text-transform: uppercase
+
+@media ( max-width: 1024px )
+
+  .nav
+    left: 0
+    width: 100%
+    padding: 30px 15px
+    padding-top: 60px
+    background-color: #fff
+    mix-blend-mode: normal
+
+  .nonActive
+    visibility: hidden
+    transform: translateY(-100%)
+
+  .list
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+
+  .listItem
+    margin-right: 0
+    margin-bottom: 10px
+
+  .link
+    font-size: 30px
+    color: #000
