@@ -1,15 +1,48 @@
+import dynamic from 'next/dynamic';
 import Container from '../container';
 import styles from './contacts.module.sass';
-import YandexMap from './yandex-map';
+import { useEffect, useRef, useState } from 'react';
+
+const YandexMap = dynamic(() => import('./yandex-map/index'), {
+	loading: () => <p>Loading...</p>,
+	ssr: false,
+});
 
 const Contacts = () => {
+	const mapRef = useRef(null);
+	const [loadMap, setLoadMap] = useState(false);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries, observer) => {
+				entries.forEach((entry) => {
+					// Проверяем, виден ли элемент mapRef
+					if (entry.isIntersecting) {
+						setLoadMap(true);
+						observer.unobserve(entry.target); // Отключаем observer после загрузки карты
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1, // Какой процент элемента будет виден для инициации загрузки
+			}
+		);
+
+		if (mapRef.current) {
+			observer.observe(mapRef.current);
+		}
+
+		// Подчищаем за собой
+		return () => observer.disconnect();
+	}, []);
+
 	return (
-		<section className={styles.contacts} id='contacts'>
+		<section ref={mapRef} className={styles.contacts} id='contacts'>
 			<Container>
 				<div className={styles.content}>
-					<div className={styles.map}>
-						<YandexMap />
-					</div>
+					<div className={styles.map}>{loadMap && <YandexMap />}</div>
 					<div className={styles.adress}>
 						<span className={styles.name}>MUSE PHOTOSTUDIO</span>
 						<a className={styles.mail} href='mailto: muse.inphotostudio@gmail.com'>
@@ -63,7 +96,7 @@ const Contacts = () => {
 							<span className={styles.houseAdress}>
 								Студия расположена по адресу: Проспект&nbsp;Революции&nbsp;39 (Коммуна), 3&nbsp;этаж.
 							</span>
-							<span className={styles.houseEntarnse}>Вход через арку  «КОММУНА», прямо 5-ти этажное здание, 3 этаж</span>
+							<span className={styles.houseEntarnse}>Вход через арку «КОММУНА», прямо 5-ти этажное здание, 3 этаж</span>
 						</p>
 					</div>
 				</div>

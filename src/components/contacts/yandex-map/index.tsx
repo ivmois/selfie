@@ -15,6 +15,7 @@ const defaultStateMap = {
 
 const YandexMap = () => {
 	const [isLoadMap, setLoadMap] = useState(defaultStateMap);
+  console.log('loading1')
 
 	useEffect(() => {
     if (isLoadMap.isLoad) return;

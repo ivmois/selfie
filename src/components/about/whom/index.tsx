@@ -2,12 +2,16 @@ import Container from '@/components/container';
 import CardWhom from './cardWhom';
 import styles from './whom.module.sass';
 
-import photo_1 from 'public/whom-img/whom-1.webp';
+import terapy from 'public/whom-img/terapy.webp';
+import classic from 'public/whom-img/classic.webp';
+import rendezvous2 from 'public/whom-img/rendezvous2.webp';
+import family from 'public/whom-img/family.webp';
+import content from 'public/whom-img/content.webp';
 
 const cardsWhom = [
   {
     id: 1,
-    photo: photo_1,
+    photo: classic,
     title: 'Классического портрета',
     text: 'Только ты и зеркало, никто не отвлекает и не смущает. Смотришь в зеркало, ищешь удачный ракурс, делаешь кадр.',
     bgColor: '#1a3066',
@@ -15,14 +19,14 @@ const cardsWhom = [
   },
   {
     id: 2,
-    photo: photo_1,
+    photo: terapy,
     title: 'Фототерапии',
     text: 'Устрой свидание с самим собой, ведь фотография - это медитация в мгновении. Никакой игры, искусственных поз или указаний со стороны. Ты можешь полностью расслабиться, изучить свое тело, обрести уверенность и раскрыть свою уникальность.',
     bgColor: '#d0fcee',
   },
   {
     id: 3,
-    photo: photo_1,
+    photo: rendezvous2,
     title: 'Фотосвидания',
     text: 'У нас точно можно рассчитывать больше, чем на пару фото с любимым человеком. Можно подурачиться и повеселиться, зарядиться положительными эмоциями и получить отличные фотографии. На такую фотосессию согласятся даже самые брутальные мужчины!',
     bgColor: '#e84179',
@@ -31,14 +35,14 @@ const cardsWhom = [
   },
   {
     id: 4,
-    photo: photo_1,
+    photo: family,
     title: 'Семейной фотосессии',
     text: 'Отличный повод всем собраться и провести время вместе! Сделать удачный общий портрет с родителями или с ребенком, который постоянно отвлекается',
     bgColor: '#ffdc73',
   },
   {
     id: 5,
-    photo: photo_1,
+    photo: content,
     title: 'Контент',
     text: 'В студии удобно и выгодно снять контент для бизнес аккаунтов, коллекции одежды для маркет-плейсов и интернет-магазинов.',
     bgColor: '#fecad1',

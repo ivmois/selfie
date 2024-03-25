@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST={}
+self.__REACT_LOADABLE_MANIFEST={"../components/contacts/index.tsx -> ./yandex-map/index":{"id":"../components/contacts/index.tsx -> ./yandex-map/index","files":["static/chunks/src_components_contacts_yandex-map_index_tsx.js"]}}

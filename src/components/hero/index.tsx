@@ -3,6 +3,7 @@ import Gallery from './gallery';
 import Media from './media';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { widthDeviceContext } from '@/context/widthDeviceContext';
+import { log } from 'console';
 
 const START_OPACITY = 0.1;
 const END_OPACITY = 0.8;
@@ -20,6 +21,8 @@ const Hero = () => {
 
 		getVh();
 	}, []);
+
+  console.log(opacity)
 
 	useEffect(() => {
 		const getOpacity = () => {
@@ -56,7 +59,7 @@ const Hero = () => {
 					<span>SCROLL</span>
 					<div className={styles.titleLine}>
 						<h1 className={styles.title}>Студия автопортрета SELFIE</h1>
-						<span> &nbsp;{'//'} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2023 </span>
+						<span> &nbsp;{'//'} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EST. 2023 </span>
 					</div>
 				</div>
 				<p className={styles.slogan}>

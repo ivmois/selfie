@@ -1,53 +1,70 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Container from '../container';
 import styles from './presteps.module.css';
 import TextApper from '../TextApper';
 
-const SLIDES_COUNT = 2.2;
+const SLIDES_COUNT = 2;
 const DEFAULT_TRANSFORM_VALUE = 100;
 
 const Presteps = () => {
 	const ref = useRef<HTMLDivElement | null>(null);
-	const [transformValue, setTransformValue] = useState<number>(DEFAULT_TRANSFORM_VALUE);
-	const [heightScrollWrap, setHeightScrollWrap] = useState<number>(0);
+	const [transformValue, setTransformValue] = useState(DEFAULT_TRANSFORM_VALUE);
+	const [heightScrollWrap, setHeightScrollWrap] = useState(0);
 
-	useEffect(() => {
-		const updateHeightWrap = () => {
-			if (!ref.current) return;
+	// Создаем функцию для обновления высоты контейнера
+	const updateHeightWrap = useCallback(() => {
+		if (!ref.current) return;
 
-			const screenWidth = window.screen.width;
-			const screenHeight = window.screen.height;
-			const heightWrap = screenWidth > screenHeight ? SLIDES_COUNT * screenWidth : SLIDES_COUNT * screenHeight;
-
-			setHeightScrollWrap(heightWrap);
-		};
-
-		updateHeightWrap(); // do it once manually to ensure calculated before first render
+		const screenWidth = window.innerWidth; // innerWidth используется для получения ширины видимой области экрана
+		const screenHeight = window.innerHeight; // innerHeight используется для получения высоты видимой области экрана
+		const heightWrap = screenWidth > screenHeight ? SLIDES_COUNT * screenWidth : SLIDES_COUNT * screenHeight;
+		setHeightScrollWrap(heightWrap);
 	}, []);
 
 	useEffect(() => {
-		const horizontalScroll = () => {
-			if (!ref.current) return;
+		updateHeightWrap();
+		window.addEventListener('resize', updateHeightWrap);
+		return () => window.removeEventListener('resize', updateHeightWrap);
+	}, [updateHeightWrap]);
 
-			const scrollPosition = ref.current.getBoundingClientRect().top;
-			const slideWidth = heightScrollWrap / SLIDES_COUNT;
+	// Создаем реф для хранения идентификатора запроса анимации
+	const animationFrameRef = useRef<number | null>(null);
 
-			if (scrollPosition < 500 && scrollPosition > -heightScrollWrap) {
-				const calculatedTransformValue = DEFAULT_TRANSFORM_VALUE - (-scrollPosition / slideWidth) * 100;
+	const horizontalScroll = useCallback(() => {
+		if (!ref.current) return;
 
-				if (scrollPosition > 0) return setTransformValue(DEFAULT_TRANSFORM_VALUE);
-				if (scrollPosition < -slideWidth) return setTransformValue(0);
+		const scrollPosition = ref.current.getBoundingClientRect().top;
+		const slideWidth = heightScrollWrap / SLIDES_COUNT;
 
-				setTransformValue(calculatedTransformValue);
+		let newTransformValue = DEFAULT_TRANSFORM_VALUE;
+
+		if (scrollPosition < 500 && scrollPosition > -heightScrollWrap) {
+			newTransformValue = DEFAULT_TRANSFORM_VALUE - (-scrollPosition / slideWidth) * 100;
+
+			if (scrollPosition > 0) newTransformValue = DEFAULT_TRANSFORM_VALUE;
+			if (scrollPosition < -slideWidth) newTransformValue = 0;
+		}
+
+		setTransformValue(newTransformValue);
+	}, [heightScrollWrap]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (animationFrameRef.current) {
+				cancelAnimationFrame(animationFrameRef.current);
 			}
+			animationFrameRef.current = requestAnimationFrame(horizontalScroll);
 		};
 
-		document.addEventListener('scroll', horizontalScroll);
+		document.addEventListener('scroll', handleScroll);
 
 		return () => {
-			document.removeEventListener('scroll', horizontalScroll);
+			if (animationFrameRef.current) {
+				cancelAnimationFrame(animationFrameRef.current);
+			}
+			document.removeEventListener('scroll', handleScroll);
 		};
-	}, [heightScrollWrap]);
+	}, [horizontalScroll]);
 
 	return (
 		<section id='booking' className={styles.presteps}>
@@ -57,17 +74,20 @@ const Presteps = () => {
 					<div className={styles.scrollWrap} style={{ height: `${heightScrollWrap}px` }} ref={ref}>
 						<div className={styles.scrollOverflow}>
 							<h3 className={styles.servicesTitle}>ВЫБЕРИ ЦВЕТ или ЧБ</h3>
-							<div className={styles.slides}>
-								<div className={`${styles.slide} ${styles.slide_1}`}>
-									<div className={styles.servicesImg}></div>
-								</div>
-								<div
-									className={`${styles.slide} ${styles.slide_2}`}
-									style={{ transform: `translate3d(${transformValue}%, 0, 0)` }}
-								>
-									<div className={styles.servicesImg}></div>
-								</div>
-							</div>
+							{/*<div className={styles.slides}>*/}
+							{/*	<div className={styles.overflowWrap} style={{ width: `${transformValue}%` }}>*/}
+							{/*		<div className={`${styles.slide} ${styles.slide_1}`}>*/}
+							{/*			<div className={styles.servicesImg}>*/}
+							{/*				<img src='/presteps/bg-color.jpg' alt='цветное фото' />*/}
+							{/*			</div>*/}
+							{/*		</div>*/}
+							{/*	</div>*/}
+							{/*	<div className={`${styles.slide} ${styles.slide_2}`}>*/}
+							{/*		<div className={styles.servicesImg}>*/}
+							{/*			<img src='/presteps/bg-chb.jpg' alt='чб фото' />*/}
+							{/*		</div>*/}
+							{/*	</div>*/}
+							{/*</div>*/}
 						</div>
 					</div>
 					<div className={styles.servicesTextWrap}>
