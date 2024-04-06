@@ -27,6 +27,7 @@ export default function Home() {
         <meta property="og:image" content="/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
+        <meta name="google-site-verification" content="zXgfSK_jX_bPyK572RzcrJvIwEW_OL0DVBceDYl6OtA" />
         <link rel="canonical" href="https://selfiemuse.ru" />
         {/* <link rel="preload" href="/fonts/SF-Medium.woff2" as="font"/>
         <link rel="preload" href="/fonts/SF-Regular.woff2" as="font"/>
