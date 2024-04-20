@@ -1,4 +1,3 @@
-import { log } from 'console';
 import styles from './card-whom.module.sass';
 import Image, { StaticImageData } from 'next/image';
 

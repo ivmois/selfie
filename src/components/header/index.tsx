@@ -7,9 +7,6 @@ const Header = () => {
 
 	const headerRef = useRef<HTMLElement>(null);
 	const logoRef = useRef<HTMLAnchorElement>(null);
-
-  console.log(scale);
-
 	useEffect(() => {
 		const getScale = () => {
 			requestAnimationFrame(() => {
@@ -29,7 +26,6 @@ const Header = () => {
 					setScale(ratio);
 				}
 			});
-
 		};
 
 		getScale();
@@ -59,7 +55,7 @@ const Header = () => {
 					viewBox='0 0 508.25 164.3'
 				>
 					<g className={styles.svg__text_2}>
-						<text className={styles.svg__text} transform='translate(-13.75 160.49)'>
+						<text className={styles.svg__text} transform='translate(-9.75 160.49)'>
 							<tspan x='0' y='0' xmlSpace='preserve'>
 								.selfie
 							</tspan>

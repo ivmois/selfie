@@ -1,46 +1,46 @@
 @import '@/styles/normalize.sass'
 
-@font-face
-  font-family: "SanFrancisco"
-  src: url("/fonts/SF-Medium.woff2")
-  font-weight: 500
-  font-style: medium
-  font-display: swap
+// @font-face
+//   font-family: "SanFrancisco"
+//   src: url("/fonts/SF-Medium.woff2")
+//   font-weight: 500
+//   font-style: medium
+//   font-display: swap
+
+// @font-face
+//   font-family: "SanFrancisco"
+//   src: url("/fonts/SF-Regular.woff2")
+//   font-weight: 400
+//   font-style: regular
+//   font-display: swap
+
+// @font-face
+//   font-family: "SanFrancisco"
+//   src: url("/fonts/SF-Light.woff2")
+//   font-weight: 300
+//   font-style: light
+//   font-display: swap
 
 @font-face
-  font-family: "SanFrancisco"
-  src: url("/fonts/SF-Regular.woff2")
+  font-family: "AeonikRegular"
+  src: url("/fonts/AeonikRegular.otf")
   font-weight: 400
   font-style: regular
   font-display: swap
 
+// @font-face
+//   font-family: "GTPressura-Light"
+//   src: url("/fonts/GTPressura-Light.woff")
+//   font-weight: 300
+//   font-style: light
+//   font-display: swap
+
 @font-face
-  font-family: "SanFrancisco"
-  src: url("/fonts/SF-Light.woff2")
-  font-weight: 300
-  font-style: light
+  font-family: "VictorMonoRegular"
+  src: url("/fonts/VictorMonoRegular.woff2")
+  font-weight: 500
+  font-style: medium
   font-display: swap
-
-// @font-face
-//   font-family: "NamuPro"
-//   src: url("/fonts/Namu-regular.woff2")
-//   font-weight: 400
-//   font-style: regular
-//   font-display: swap
-
-// @font-face
-//   font-family: "BaronNeue"
-//   src: url("/fonts/BaronNeue-regular.woff2")
-//   font-weight: 400
-//   font-style: regular
-//   font-display: swap
-
-// @font-face
-//   font-family: "Gilroy"
-//   src: url("/fonts/Gilroy-regular.woff2")
-//   font-weight: 400
-//   font-style: regular
-//   font-display: swap
 
 *
   box-sizing: border-box
@@ -51,8 +51,10 @@ html
 
 body
   background-color: #fff
-  font-family: "SanFrancisco", sans-serif
+  font-family: "VictorMonoRegular", sans-serif
   font-weight: 300
+  orientation: landscape
+  color: #1b1b1b
 
 a
   text-decoration: none
@@ -75,22 +77,22 @@ h1,h2,h3
   margin: 0
 
 h2,h3
-  font-family: "SanFrancisco"
+  font-family: "AeonikRegular"
   font-weight: 400
   text-transform: uppercase
   padding: 0
   margin: 0
 
 h2
-  font-size: 65px
+  font-size: calc(50px + 20 * ((100vw - 1024px) / (1920 - 1024)))
 
 h3
-  font-size: 50px
+  font-size: calc(30px + 15 * ((100vw - 1024px) / (1920 - 1024)))
 
 @media( max-width: 1024px)
 
   h2
-    font-size: 40px
+    font-size: calc(23px + 22 * ((100vw - 360px) / (1024 - 360)))
 
   h3
-    font-size: 25px
+    font-size: calc(20px + 15 * ((100vw - 360px) / (1024 - 360)))

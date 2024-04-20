@@ -3,19 +3,7 @@
   left: 0
   top: 0
   flex: 1 1 46%
-  border-radius: 25px
-
-// .mask
-//   position: absolute
-//   left: 0
-//   top: 0
-//   bottom: 0
-//   right: 0
-//   background-image: url(/whom-img/paper.jpg)
-//   background-repeat: no-repeat
-//   background-size: cover
-//   opacity: 0.3
-//   border-radius: 25px
+  border-radius: 15px
 
 .content
   display: flex
@@ -26,7 +14,8 @@
 .photo
   position: relative
   flex: 1 1 35%
-  height: 85vh
+  height: 43vw
+  border-radius: 15px
   overflow: hidden
 
 .img
@@ -45,7 +34,8 @@
 .text
   min-height: 100px
   padding-bottom: 15px
-  font-size: 25px
+  font-size: calc(18px + 4 * ((100vw - 1024px) / (1920 - 1024)))
+  line-height: 120%
 
 @media (max-width: 1024px)
 
@@ -62,4 +52,4 @@
     max-height: 600px
 
   .text
-    font-size: 16px
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))

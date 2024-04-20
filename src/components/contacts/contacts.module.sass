@@ -1,5 +1,5 @@
 .contacts
-  padding: 100px 0
+  padding: 95px 0
   border-top: 1px solid #000
 
 .content
@@ -10,32 +10,36 @@
 .map
   position: relative
   flex: 1 1 300px
-  width: 48%
-  height: 700px
+  width: 45%
+  height: 600px
 
 .adress
   flex: 1 1 300px
   width: 48%
   color: #000
-  font-size: 35px
+  font-size: calc(25px + 10 * ((100vw - 1024px) / (1920 - 1024)))
 
 .name
   display: block
   margin-bottom: 15px
-  font-family: "SanFrancisco"
+  font-family: 'AeonikRegular'
   font-weight: 400
   text-transform: uppercase
-  font-size: 45px
+  font-size: calc(40px + 5 * ((100vw - 1024px) / (1920 - 1024)))
 
 .mail
   display: block
   margin-bottom: 10px
-  font-size: 35px
+  font-size: calc(20px + 5 * ((100vw - 1024px) / (1920 - 1024)))
+
+.links
+  display: flex
+  align-items: center
+  gap: 20px
 
 .tel
   display: block
-  margin-bottom: 20px
-  font-size: 30px
+  font-size: calc(20px + 5 * ((100vw - 1024px) / (1920 - 1024)))
 
 .massage svg
   margin-right: 15px
@@ -49,17 +53,25 @@
 
 @media (max-width: 1024px)
 
+  .contacts
+    padding-top: 50px
+    padding-bottom: 20px
+
   .map
-    height: 50vh
+    height: 45vw
 
   .name
     font-size: 25px
 
   .mail
-    font-size: 20px
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))
 
   .tel
-    font-size: 20px
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))
 
   .house
-    font-size: 20px
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))
+
+@media (max-width: 578px)
+  .map
+    height: 90vw

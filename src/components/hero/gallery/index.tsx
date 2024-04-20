@@ -15,7 +15,6 @@ const DELAY = 3000;
 
 const Gallery = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);

@@ -23,13 +23,14 @@
     align-items: center
     min-height: 65px
     border-bottom: 1px solid #ffffff
-    font-size: 25px
+    font-size: calc(20px + 5 * ((100vw - 1024px) / (1920 - 1024)))
     color: #ffffff
 
 .price
   display: block
   padding: 5px 0
   font-size: 40px
+
   color: #ffffff
   &_sale
     font-size: 20px
@@ -37,8 +38,7 @@
 .info
   flex: 1 1 46%
   text-transform: uppercase
-  font-size: 30px
-  font-family: "SanFrancisco"
+  font-size: calc(25px + 5 * ((100vw - 1024px) / (1920 - 1024)))
   font-weight: 300
   color: #ffffff
 
@@ -59,7 +59,7 @@
     margin-bottom: 20px
     &__item
       min-height: 55px
-      font-size: 16px
+      font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))
       color: #ffffff
 
   .price
@@ -68,4 +68,4 @@
       font-size: 16px
 
   .info
-    font-size: 12px
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))

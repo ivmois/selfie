@@ -18,14 +18,32 @@
 .listItem:not(:last-child)
   margin-right: 20px
 
-.link
-  color: #fff
-  font-size: 20px
-  text-transform: uppercase
-  font-family: "SanFrancisco"
-  font-weight: 300
+.listItem:last-child
+  position: relative
 
+.listItem:last-child:hover:before
+  content: " "
+  position: absolute
+  left: -9px
+  right: -9px
+  bottom: -6px
+  top: -6px
+  border: 2px solid #ffffff
+  border-radius: 20px
+  padding: 5px
+
+
+.link
+  position: relative
+  color: #fff
+  font-size: calc(15px + 5 * ((100vw - 1024px) / (1920 - 1024)))
   text-transform: uppercase
+  font-family: "AeonikRegular"
+  font-weight: 300
+  text-transform: uppercase
+
+.contacts
+  display: none
 
 @media ( max-width: 1024px )
 
@@ -34,6 +52,7 @@
     width: 100%
     padding: 30px 15px
     padding-top: 60px
+    padding-bottom: 0
     background-color: #fff
     mix-blend-mode: normal
 
@@ -50,6 +69,20 @@
     margin-right: 0
     margin-bottom: 10px
 
+  .listItem:last-child
+    margin-top: 70px
+    margin-left: 0
+
   .link
-    font-size: 30px
+    font-size: calc(20px + 6 * ((100vw - 360px) / (1024 - 360)))
     color: #000
+
+  .contacts
+    display: block
+    margin-left:-12px
+
+  .icon
+    width: 50px
+    height: 50px
+
+

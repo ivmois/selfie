@@ -43,7 +43,7 @@
   display: flex
   align-items: flex-end
   justify-content: space-between
-  font-family: 'SanFrancisco'
+  font-family: 'AeonikRegular'
   color: #fff
   font-size: 14px
 
@@ -53,9 +53,8 @@
 
 .title
   font-size: 14px
-  font-family: 'SanFrancisco'
+  font-family: 'AeonikRegular'
   font-weight: 300
-
 
 .descr
   position: relative
@@ -66,16 +65,17 @@
   margin-top: calc(100 * var(--vh, 1vh))
   display: flex
   flex-direction: column
-  justify-content: center
+  justify-content: flex-end
   padding: 10px $paddingContainer
 
 .slogan
+  margin-bottom: 15vw
   margin-left: -0.05em
-  font-family: 'SanFrancisco'
+  font-family: 'AeonikRegular'
   font-weight: 400
   text-transform: uppercase
-  line-height: 100%
-  font-size: 7vw
+  line-height: 95%
+  font-size: calc(77px + 20 * ((100vw - 1024px) / (1920 - 1024)))
   color: #fff
 
 .button
@@ -103,17 +103,16 @@
   .title
     font-size: 10px
 
-
   .scroll
     position: relative
     bottom: initial
     padding: 0
-    padding-bottom: 20px
+    padding-bottom: 35px
     font-size: 10px
 
   .slogan
-    bottom: 10%
-    font-size: 11vw
+    font-size: calc(30px + 55 * ((100vw - 360px) / (1024 - 360)))
+    margin-bottom: 0
 
   .button
     bottom: 10%

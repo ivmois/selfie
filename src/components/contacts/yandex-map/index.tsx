@@ -35,7 +35,7 @@ const YandexMap = () => {
 	    window.initMap = function() {
 	     const map =  new window.ymaps.Map("map", {
 	        center: [51.666607, 39.206657],
-	        zoom: 18,
+	        zoom: 16,
 	      });
         map.controls.remove('rulerControl');
         map.controls.remove('searchControl');

@@ -5,30 +5,39 @@
   padding-bottom: 60px
   background-color: #fffff
 
+.titleWrap
+  width: 100%
+  display: flex
+  justify-content: flex-end
+
 .title
-  max-width: 1024px
-  padding-left: $paddingContainer
-  padding-right: $paddingContainer
-  margin-bottom: 30px
-  font-family: "SanFrancisco"
+  max-width: 60vw
+  margin-bottom: 50px
+  text-align: right
   font-weight: 500
   background-color: #ffffff
 
+.content
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 50px
+  padding-right: 5%
+  padding-left: 10%
+
 .descr
-  max-width: 100%
-  padding-left: $paddingContainer
-  padding-right: $paddingContainer
-  margin-bottom: 50px
+  max-width: 25%
+  min-width: 32vw
+  margin-bottom: 80px
   text-transform: uppercase
-  font-size: 30px
-  font-family: "SanFrancisco"
+  font-size: calc(20px + 5 * ((100vw - 1024px) / (1920 - 1024)))
   font-weight: 300
 
 .imgContainer
   position: relative
-  width: 70%
+  width: 32vw
+  min-width: 400px
   padding-top: 30%
-  margin: 0 auto
 
 .img
   width: 100%
@@ -41,12 +50,21 @@
     padding-top: 60px
     padding-bottom: 30px
 
+  .content
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+
   .imgContainer
     width: 100%
+    min-width: 100%
     padding-top: 50%
 
   .title
+    max-width: 100%
     margin-bottom: 30px
 
   .descr
-    font-size: 14px
+    max-width: 94%
+    margin-bottom: 20px
+    font-size: calc(15px + 3 * ((100vw - 360px) / (1024 - 360)))

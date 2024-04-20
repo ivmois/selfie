@@ -19,9 +19,8 @@ const Price = () => {
             {/* <span className={styles.price}>3500 руб / сет</span>
             <span className={`${styles.price} ${styles.price_sale}`}> при бронировании 2х сетов и более 2500 руб / сет </span> */}
           </div>
-          <p className={styles.info}>{'//'}&nbsp;&nbsp;&nbsp;&nbsp; за актуальными акциями и скидками следите в наших социальных сетях</p>
+          <p className={styles.info}>{'//'}&nbsp; за актуальными акциями и скидками следите в наших социальных сетях</p>
         </div>
-        <RunLine />
       </Container>
     </section>
   );
