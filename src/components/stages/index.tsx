@@ -29,7 +29,22 @@ const Stages = () => {
 	return (
 		<section className={styles.section} id='shooting'>
 			<Container>
-      <h2 className={styles.title}>КАК ПРОХОДИТ СЪЕМКА </h2>
+				<h2 className={styles.title}>КАК ПРОХОДИТ СЪЕМКА </h2>
+				{/* <svg
+        className={styles.svg}
+					viewBox='0 0 452 64'
+					aria-hidden='true'
+					preserveAspectRatio='none'
+					fill='none'
+					xmlns='http://www.w3.org/2000/svg'
+				>
+					<path
+						d='M432.024 6.057C363.787 31.17 292.288 47.419 221.749 57.845c-23.267 3.44-47.795 7.209-71.26 3.84-4.211-.605 21.076-9.015 22.585-9.459C253.099 28.682 336.67 32.735 418.16 24.974c1.319-.125 22.157-1.906 19.678-2.435-21.432-4.572-44.013-2.934-65.594-2.247-118.853 3.78-237.84 10.863-356.746 10.863-6.427 0-24.378-.697-7.38-2.435 42.948-4.392 86.438-2.652 129.476-3.371 68.659-1.148 137.455-1.657 206.027-6.556 34.766-2.484 71.268-4.564 105.398-14.422C455.277 2.564 444.899 1 442.758 1'
+						stroke='#0012be'
+						stroke-linecap='round'
+						vector-effect='non-scaling-stroke'
+					></path>
+				</svg> */}
 				<ul className={styles.list}>
 					{stagesList.map((stage) => (
 						<Stage key={stage.id} number={stage.id} title={stage.title} text={stage.text} />

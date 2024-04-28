@@ -2,8 +2,8 @@ import styles from './hero.module.sass';
 import Gallery from './gallery';
 import Media from './media';
 import { useContext, useEffect, useRef} from 'react';
-import { widthDeviceContext } from '@/context/widthDeviceContext';
 import Background from './background';
+import { widthDeviceContext } from '@/context/widthDeviceContext';
 
 
 const Hero = () => {
@@ -19,10 +19,11 @@ const Hero = () => {
 		getVh();
 	}, []);
 
+
 	return (
 		<section className={styles.hero} ref={sectionRef} id='hero'>
 			<div className={styles.media__container}>
-				<div className={styles.media}>{widthDevice && (widthDevice > 1023 ? <Gallery /> : <Media />)}</div>
+				{widthDevice && <div className={styles.media}>{(widthDevice > 1023 ? <Gallery /> : <Media />)}</div> }
 			</div>
 
 			<div className={styles.descr}>

@@ -12,9 +12,9 @@ const Price = () => {
             <ul className={styles.list}>
               <li className={styles.list__item}>45 минут чистого времени на съемку</li>
               <li className={styles.list__item}>Оборудование (камера, пульт, импульсный свет)</li>
-              <li className={styles.list__item}>Один фон на выбор</li>
+              <li className={styles.list__item}> Фоны на выбор</li>
               <li className={styles.list__item}>Стулья в разной стилистике и реквизит</li>
-              <li className={styles.list__item}>Все отснятые кадры с обработкой готовы в течении суток</li>
+              <li className={styles.list__item}>Все отснятые кадры с обработкой готовы в течении 24 часов</li>
             </ul>
             {/* <span className={styles.price}>3500 руб / сет</span>
             <span className={`${styles.price} ${styles.price_sale}`}> при бронировании 2х сетов и более 2500 руб / сет </span> */}

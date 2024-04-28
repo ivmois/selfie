@@ -24,6 +24,8 @@ const Gallery = () => {
     };
   }, [activeSlide]);
 
+  if (!slides.length) return null
+
   return (
     <div className={styles.slider}>
       <div className={styles.sliderContainer}>

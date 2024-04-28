@@ -5,11 +5,11 @@ import Header from '@/components/header';
 import Hero from '@/components/hero';
 import About from '@/components/about';
 import Contacts from '@/components/contacts';
-import WidthDeviceContextProvider from '@/context/widthDeviceContext';
 import Footer from '@/components/footer';
 import Price from '@/components/price';
 import Sertificate from '@/components/sertificate';
 import Stages from '@/components/stages';
+import WidthDeviceContextProvider from '@/context/widthDeviceContext';
 
 export default function Home() {
 	return (
@@ -35,6 +35,7 @@ export default function Home() {
 				<link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
 				<link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
 				<link rel='manifest' href='/site.webmanifest' />
+
 			</Head>
 			<WidthDeviceContextProvider>
 				<Layout>

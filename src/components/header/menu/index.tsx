@@ -3,7 +3,7 @@ import { memo, useEffect, useRef, useState } from 'react';
 import Button from './button';
 import styles from './menu.module.sass';
 
-const Menu = () => {
+const Menu = ({handleScale}: {handleScale: (value: boolean) => void }) => {
   const [isActive, setIsActive] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -15,18 +15,40 @@ const Menu = () => {
     setIsActive(false);
   };
 
-  useEffect(() => {
+// высота меню
+	useEffect(() => {
     if (!isActive) return;
 
-    const handleTouchStart = (e: TouchEvent | MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setIsActive(false);
+		const getVh = () => {
+			const vhMenu = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vhMenu', `${vhMenu}px`);
+		};
+    getVh();
+	}, [isActive]);
+
+
+//блокировка скролла при открытом меню
+
+  useEffect(() => {
+    const handleTouchMove = (event: TouchEvent) => {
+      if (isActive) {
+        event.preventDefault();
       }
     };
-    document.addEventListener('click', handleTouchStart);
+
+    if (isActive) {
+      handleScale(true)
+      document.body.style.overflow = 'hidden';
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    } else {
+      handleScale(false)
+      document.body.style.overflow = '';
+      document.removeEventListener('touchmove', handleTouchMove);
+    }
 
     return () => {
-      document.removeEventListener('click', handleTouchStart);
+      document.body.style.overflow = '';
+      document.removeEventListener('touchmove', handleTouchMove);
     };
   }, [isActive]);
 
