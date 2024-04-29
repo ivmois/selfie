@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
-	const ymId = 87388785;
+	const ymId = 97027378;
 
 	return (
 		<Html lang='en'>
