@@ -39,7 +39,16 @@ const Nav = ({ isActive, handleClose }: { isActive: boolean; handleClose: () => 
 					))}
 					<li className={styles.line}></li>
 					<li className={styles.listItemBooking}>
-						<button
+						<a
+							target='_blank'
+							href='https://n1176575.yclients.com'
+							className={styles.booking}
+							onClick={handleClose}
+							style={{ transitionDelay: `${isActive ? 0.1 + menuItem.length / 10 : 0}s` }}
+						>
+							Забронировать
+						</a>
+						{/* <button
 							className={styles.booking}
 							style={{ transitionDelay: `${isActive ? 0.1 + menuItem.length / 10 : 0}s` }}
 							onClick={() => {
@@ -54,7 +63,7 @@ const Nav = ({ isActive, handleClose }: { isActive: boolean; handleClose: () => 
 							</Portal>
 						) : (
 							<BookingModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
-						)}
+						)} */}
 					</li>
 				</ul>
 				<div className={styles.contacts}>
