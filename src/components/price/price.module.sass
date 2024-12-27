@@ -35,12 +35,35 @@
   &_sale
     font-size: 20px
 
+ 
+
 .info
   flex: 1 1 46%
   text-transform: uppercase
   font-size: calc(25px + 5 * ((100vw - 1024px) / (1920 - 1024)))
   font-weight: 300
   color: #ffffff
+
+.booking
+  position: relative
+  margin-left: auto
+  color: #fff
+  font-size: calc(17px + 6 * ((100vw - 1024px) / (1920 - 1024)))
+  text-transform: uppercase
+  font-family: "AeonikRegular"
+  font-weight: 300
+  cursor: pointer
+  border: 2px solid #ffffff
+  border-radius: 20px
+  padding: 8px 8px
+  mix-blend-mode: difference
+
+.booking:hover
+  border: 2px solid #ffffff
+  background-color: #ffffff
+  color: #000000
+  mix-blend-mode: initial
+  transition: background-color 0.2s ease
 
 @media (max-width: 1024px)
 

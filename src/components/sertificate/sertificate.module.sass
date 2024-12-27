@@ -25,9 +25,11 @@
   padding-right: 5%
   padding-left: 10%
 
-.descr
+.contentLeft 
   max-width: 25%
   min-width: 32vw
+ 
+.descr
   margin-bottom: 80px
   text-transform: uppercase
   font-size: calc(20px + 5 * ((100vw - 1024px) / (1920 - 1024)))
@@ -44,6 +46,27 @@
   height: 100%
   object-fit: contain
 
+.buy
+  position: relative
+  color: #fff
+  font-size: calc(17px + 6 * ((100vw - 1024px) / (1920 - 1024)))
+  text-transform: uppercase
+  font-family: "AeonikRegular"
+  font-weight: 300
+  cursor: pointer
+  border: 2px solid #ffffff
+  border-radius: 20px
+  padding: 8px 8px
+  mix-blend-mode: difference
+  
+
+.buy:hover 
+  background-color: #000000
+  border: 2px solid #000000
+  mix-blend-mode: initial
+  transition: background-color 0.2s ease
+
+
 @media( max-width: 1024px)
 
   .sertificate
@@ -57,6 +80,10 @@
     padding-right: 0%
     padding-left: 0%
 
+  .contentLeft 
+    width: 100%
+    max-width: 93%
+
   .imgContainer
     width: 100%
     min-width: 100%
@@ -67,7 +94,5 @@
     margin-bottom: 30px
 
   .descr
-    width: 100%
-    max-width: 93%
-    margin-bottom: 20px
+    margin-bottom: 40px
     font-size: calc(15px + 3 * ((100vw - 360px) / (1024 - 360)))
