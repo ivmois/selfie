@@ -23,22 +23,7 @@ const Hero = () => {
       <div className={styles.media__container}>
         {widthDevice && (
           <div className={styles.media}>
-            {/* {widthDevice > 1023 ? <Gallery /> : <Media />} */}
-            <div className={styles.valentin}>
-              {widthDevice > 1023 ? (
-                <img
-                  className={styles.valentin__img}
-                  alt="valentin"
-                  src="/hero-img/st-valentine.jpg"
-                />
-              ) : (
-                <img
-                  className={styles.valentin__img}
-                  alt="valentin"
-                  src="/hero-img/valentine-mob.jpg"
-                />
-              )}
-            </div>
+            {widthDevice > 1023 ? <Gallery /> : <Media />}
           </div>
         )}
       </div>
