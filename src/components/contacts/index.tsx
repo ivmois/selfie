@@ -63,7 +63,7 @@ const Contacts = () => {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_57972_2460)">
+                  <g clipPath="url(#clip0_57972_2460)">
                     <path
                       d="M20 39.375C30.7005 39.375 39.375 30.7005 39.375 20C39.375 9.29948 30.7005 0.625 20 0.625C9.29948 0.625 0.625 9.29948 0.625 20C0.625 30.7005 9.29948 39.375 20 39.375Z"
                       fill="#30BF39"
@@ -80,7 +80,7 @@ const Contacts = () => {
                   </defs>
                 </svg>
               </a>
-              <a className={styles.massage} href="https://t.me/musephotostudio">
+              <a className={styles.massage} href="https://t.me/selfie_muse">
                 <svg
                   width="40"
                   height="40"
