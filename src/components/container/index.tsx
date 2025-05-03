@@ -1,5 +1,4 @@
-import Nav from '../header/menu/nav';
-import styles from './container.module.sass';
+import styles from "./container.module.sass";
 
 interface IContainer {
   children: React.ReactNode;
@@ -7,8 +6,8 @@ interface IContainer {
 
 const Container = ({ children }: IContainer) => {
   return (
-    <div className={styles.container} id='container'>
-     {children}
+    <div className={styles.container} id="container">
+      {children}
     </div>
   );
 };
