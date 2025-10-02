@@ -1,0 +1,40 @@
+@use '@/styles/variables.sass' as vars
+
+.whom
+  position: relative
+  z-index: 100
+  padding-bottom: 30px
+  background-color: #ffffff
+
+.title
+  position: sticky
+  left: 0
+  top: 0
+  max-width: 1200px
+  padding-top: 10vh
+  padding-bottom: 20vh
+  // margin: 0 auto
+  text-align: left
+  font-family: "AeonikRegular"
+  font-weight: 500
+  // font-size: 60px
+  background-color: #ffffff
+
+.cardList
+  // display: flex
+  // flex-wrap: wrap
+  // gap: 70px
+
+@media (max-width: 1024px)
+
+  .whom
+    padding-bottom: 60px
+
+  .title
+    padding-top: 12vh
+    padding-bottom: 3vh
+
+  .cardList
+    margin-left: calc(-1 * vars.$paddingContainer)
+    margin-right: calc(-1 * vars.$paddingContainer)
+    gap: 40px

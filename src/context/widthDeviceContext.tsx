@@ -1,8 +1,14 @@
-import { createContext, useEffect, useState } from 'react';
+"use client";
+
+import { createContext, useEffect, useState } from "react";
 
 export const widthDeviceContext = createContext<number | null>(null);
 
-const WidthDeviceContextProvider = ({ children }: { children: React.ReactNode }) => {
+const WidthDeviceContextProvider = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [widthDevice, setWidthDevice] = useState<number | null>(null);
 
   useEffect(() => {
@@ -10,7 +16,11 @@ const WidthDeviceContextProvider = ({ children }: { children: React.ReactNode })
     setWidthDevice(width);
   }, []);
 
-  return <widthDeviceContext.Provider value={widthDevice}>{children}</widthDeviceContext.Provider>;
+  return (
+    <widthDeviceContext.Provider value={widthDevice}>
+      {children}
+    </widthDeviceContext.Provider>
+  );
 };
 
 export default WidthDeviceContextProvider;

@@ -1,0 +1,20 @@
+.item
+  max-width: 20%
+  @media (max-width: 1024px)
+    max-width: 90%
+
+.title
+  margin-bottom: 30px
+  font-family: 'AeonikRegular'
+  font-weight: 400
+  text-transform: uppercase
+
+.text
+  max-width: 600px
+  font-weight: 300
+  line-height: 120%
+  font-size: calc(14px + 8 * ((100vw - 1024px) / (1920 - 1024)))
+  @media (max-width: 1024px)
+    font-size: calc(18px + 6 * ((100vw - 360px) / (1024 - 360)))
+
+
