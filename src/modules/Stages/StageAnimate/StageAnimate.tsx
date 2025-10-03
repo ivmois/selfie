@@ -23,7 +23,7 @@ export const StageAnimate = ({ number }: { number: number }) => {
       },
       {
         root: null,
-        rootMargin: "-100px",
+        rootMargin: "-60px",
         threshold: 0.1, // Какой процент элемента будет виден для инициации загрузки
       }
     );

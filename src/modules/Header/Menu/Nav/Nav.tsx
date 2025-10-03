@@ -31,6 +31,11 @@ export const Nav = ({
               </a>
             </li>
           ))}
+          <li className={styles.listItem}>
+            <Link className={styles.link} href="/rules">
+              Правила
+            </Link>
+          </li>
           <li className={styles.line}></li>
           <li className={styles.listItemBooking}>
             <a
