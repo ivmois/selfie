@@ -36,6 +36,7 @@ export const WhomImg = ({ photo }: IWhomImg) => {
       <Image
         className={styles.img}
         src={photo}
+        priority
         sizes="(min-width: 1025px) 50vw"
         fill
         alt="автопортрет"
