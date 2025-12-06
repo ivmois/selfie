@@ -8,7 +8,7 @@ import { Contacts } from "@/modules/Contacts/Contacts";
 import { Header } from "@/modules/Header/Header";
 import { Footer } from "@/modules/Footer/Footer";
 import { CookieNotific } from "@/modules/CookieNotific/CookieNotific";
-
+//откат
 export default function Home() {
   return (
     <>
