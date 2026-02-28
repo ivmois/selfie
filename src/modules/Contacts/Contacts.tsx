@@ -17,7 +17,7 @@ export const Contacts = () => {
               <a className={styles.tel} href="tel: +79192412000">
                 +7 (919) 241-20-00
               </a>
-              <a
+              {/* <a
                 className={styles.massage}
                 href="https://api.whatsapp.com/send?phone=79192412000"
               >
@@ -44,7 +44,7 @@ export const Contacts = () => {
                     </clipPath>
                   </defs>
                 </svg>
-              </a>
+              </a> */}
               <a className={styles.massage} href="https://t.me/selfie_muse">
                 <svg
                   width="40"
